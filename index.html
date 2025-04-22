@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+body { 
+  font-family:'Press Start 2P', cursive; 
+  line-height:1.5em; 
+  margin:0; 
+  padding:.1em .5em; 
+  position: relative;
+  z-index: 1;
+}
+* { font-size:16px; font-weight:normal; font-style:normal; }
+h2,h3,h4 { margin:.5em 0; user-select:none; }
+h2 { text-decoration:underline; margin:1em 0; font-size:20px; }
+h3 { font-size:18px; }
+ul { list-style:square; padding:0; margin:.5em 1em; }
+li { margin:.5em 0; }
+a:link { text-decoration:none; }
+label.clicker { cursor:pointer; outline:none; }
+input.clicker { display:none; }
+input.clicker:checked+div { transition:opacity ease 0.3s; }
+input.clicker:not(:checked)+div { height:0; overflow:hidden; opacity:0; }
+html { 
+  background:#000000; 
+}
+body { 
+  color:#c0c0c0; 
+  background-color: #000000;
+  position: relative;
+}
+/* 单一背景图片 */
+body::before {
+  content: "";
+  background-image: url('photo3.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.25;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+h2 a, h2 a:link, h2 a:visited, h2 a:active {
+  color: #ffa500;  /* 与h2相同的颜色 */
+  font-size: 20px; /* 与h2相同的大小 */
+  text-decoration: underline; /* 保持下划线 */
+}
+h2 a:hover {
+  color: #000000;
+  background: #c0c0c0;
+}
+h3 { color:#55ffff; }
+h4,b { color:#ffffff; }
+i { color:#ffff55; }
+a:link,a:active,a:visited { color:#0048ff; }
+a.highlight { color:#ffff55; }
+a:hover,h3:hover { color:#000000; background:#c0c0c0; }
+::selection { color:#000000; background:#00ffff; }
+::-moz-selection { color:#000000; background:#00ffff; }
+::-ms-selection { color:#000000; background:#00ffff; }
+::-webkit-selection { color:#000000; background:#00ffff; }
+
+/* 键盘导航样式 - 红白机风格 */
+.keyboard-focus {
+  outline: 3px solid #ffffff !important;
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  box-shadow: 0 0 0 1px #000000;
+  position: relative;
+  animation: blink 1s infinite;
+  z-index: 2;
+}
+
+.pixel-text {
+  font-family: "Press Start 2P";
+  color: white;
+  text-shadow: 
+    1px 0 0 yellowgreen,  /* 右描边 */
+    -1px 0 0 yellowgreen, /* 左描边 */
+    0 1px 0 yellowgreen,  /* 下描边 */
+    0 -1px 0 yellowgreen; /* 上描边 */
+}
+
+.light-gray-text {
+  color: #888888;  /* 使用较淡的灰色 */
+}
+
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0.8; }
+}
+
+/* 确保所有子元素也继承颜色变化 */
+.keyboard-focus * {
+  color: #000000 !important;
+}
+
+/* 确保可点击元素有足够的点击区域 */
+label.clicker, h3.clicker {
+  display: inline-block;
+  padding: 5px;
+  margin: 2px 0;
+}
+
+/* 背景图片样式 */
+.background-container {
+  display: none;
+}
+
+.background-image {
+  display: none;
+}
+
+/* 确保内容在背景之上 */
+.content-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* 添加一个初始选择器，确保页面加载时就有一个元素被选中 */
+#initial-focus {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+</style>
+<title>Nuo Chen</title>
+</head>
+<body>
+  <!-- 添加一个初始焦点元素 -->
+<div id="initial-focus" tabindex="0"></div>
+<h2><a href="https://huggingface.co/nuojohnchen">Nuo Chen</a></h2>
+<p>
+<b>Ph.D. student</b><br>
+<a href="https://www.nus.edu.sg/">National University of Singapore</a><br/>
+<a href="https://www.comp.nus.edu.sg/">School of Computing</a><br/>
+<b>Email:</b> nuochen at comp dot nus dot edu dot sg
+</p>
+<label for="drop-research" class="clicker"><h3>Research statement</h3></label>
+<input id="drop-research" class="clicker" type="checkbox" checked>
+<div>
+<p>
+<!-- <b>Bio:</b> -->
+I am a Ph.D. student in the School of Computing funded by the National University of Singapore. My supervisor is <a href="https://www.comp.nus.edu.sg/~hebs/">Prof. Bingsheng He</a>. My research interest lies in <i class="pixel-text">Large Language Model (LLM) engineering</i>, particularly in unlocking their potential for practical applications through the lens of algorithms, theory, and frameworks (e.g., optimization techniques, reinforcement learning). I have worked enjoyably as a research assistant in the Chinese University of Hong Kong, Shenzhen with <a href="https://wabyking.github.io/old.html">Dr. Benyou Wang</a>. Outside coding, you can find me playing poker and ultimate frisbee.
+</p>
+<p>
+<i>Live deep and suck out all the marrow of life.  -- Henry David Thoreau</i>
+</p>
+<!-- <p> -->
+<!-- <b>Work:</b>
+<li>
+  Nuo Chen, Zhiyuan Hu, Qingyun Zou, Jiaying Wu, Qian Wang, Bryan Hooi, Bingsheng He. <b>JudgeLRM: Large Reasoning Models as a Judge.</b>
+  <a href="pdf/journals/joc/AbeHNOP23.pdf">paper</a> <a href="pdf/journals/joc/AbeHNOP23.pdf">code</a> <a href="pdf/journals/joc/AbeHNOP23.pdf">model</a> <a href="pdf/journals/joc/AbeHNOP23.pdf">demo</a> <a href="pdf/journals/joc/AbeHNOP23.pdf">slides</a>
+  </li>
+<li>
+  Nuo Chen, Andre Lin HuiKai, Jiaying Wu, Junyi Hou,  Zining Zhang, Qian Wang, Xidong Wang, Bingsheng He. <b>XtraGPT: LLMs for Human-AI Collaboration on Controllable Scientific Paper Refinement.</b>
+  <a href="pdf/journals/joc/AbeHNOP23.pdf">paper</a> <a href="pdf/journals/joc/AbeHNOP23.pdf">code</a> <a href="pdf/journals/joc/AbeHNOP23.pdf">model</a> <a href="pdf/journals/joc/AbeHNOP23.pdf">demo</a>
+  </li>
+<li>
+  Xidong Wang*, Nuo Chen*, Junyin Chen*, Yidong Wang, Guorui Zhen, Xiangbo Wu, Yan Hu, Anningzhe Gao, Xiang Wan, Haizhou Li, Benyou Wang. <b>Apollo: A Lightweight Multilingual Medical LLM towards Democratizing Medical AI to 6B People.</b>
+  <a href="pdf/journals/joc/AbeHNOP23.pdf">paper</a> <a href="pdf/journals/joc/AbeHNOP23.pdf">code</a> <a href="pdf/journals/joc/AbeHNOP23.pdf">model</a> <a href="pdf/journals/joc/AbeHNOP23.pdf">demo</a>
+  </li>
+</p> -->
+</div>
+<label for="drop-publications" class="clicker"><h3>Publications</h3></label>
+<input id="drop-publications" class="clicker" type="checkbox">
+<div>
+<p>
+<b>Portals:</b>
+<a href="https://github.com/nuojohnchen">Github</a>,
+<a href="https://huggingface.co/nuojohnchen">Huggingface</a>,
+<a href="https://scholar.google.com/citations?user=E99B1yEAAAAJ&hl=en">Google Scholar</a>.
+</p>
+<!-- <h4>2023</h4> -->
+<ul>
+<li>
+  Nuo Chen, Zhiyuan Hu, Qingyun Zou, Jiaying Wu, Qian Wang, Bryan Hooi, Bingsheng He. <b>JudgeLRM: Large Reasoning Models as a Judge.</b> <span class="light-gray-text">Huggingface #2 Paper of the day.</span>
+  <a href="https://arxiv.org/abs/2504.00050">paper</a> <a href="https://github.com/NuoJohnChen/JudgeLRM">code</a> <a href="https://huggingface.co/nuojohnchen/JudgeLRM-7B">model</a> <a href="https://huggingface.co/spaces/nuojohnchen/JudgeLRMDemo">demo</a> <a href="https://osspicgo.oss-cn-shanghai.aliyuncs.com/judgelrmpre.pdf">slides</a>
+  </li>
+<!-- <li>
+  Nuo Chen, Andre Lin HuiKai, Jiaying Wu, Junyi Hou,  Zining Zhang, Qian Wang, Xidong Wang, Bingsheng He. <b>XtraGPT: LLMs for Human-AI Collaboration on Controllable Scientific Paper Refinement.</b>
+  <a href="pdf/journals/joc/AbeHNOP23.pdf">paper</a> <a href="pdf/journals/joc/AbeHNOP23.pdf">code</a> <a href="pdf/journals/joc/AbeHNOP23.pdf">model</a> <a href="pdf/journals/joc/AbeHNOP23.pdf">demo</a>
+  </li> -->
+<li>
+Nuo Chen*, Yufei Gao*, Yongnan Jin*, Yan Hu, Anningzhe Gao, Lingyong Yan and Benyou Wang. <b>Mitigating Short Board Effect via Dynamic Reward Balancing in Multi-reward LLM Optimization.</b> <span class="light-gray-text">SSI-FM@ICLR 2025</span>.
+<a href="https://openreview.net/forum?id=JXAJ12ssND">pdf</a>
+</li>
+<li>
+Nuo Chen, Guojun Xiong, Bingsheng He. <b>MPAW: Multi-Preference Alignment through Weak Model Collaboration for Efficient and Flexible LLM Decoding.</b> <span class="light-gray-text">SSI-FM@ICLR 2025</span>.
+<a href="https://openreview.net/forum?id=zMtCKA4APY">pdf</a>
+</li>
+<!-- <li>
+  Qian Wang, Zhanzhi Lou, Zhenheng Tang, Nuo Chen, Xuandong Zhao, Wenxuan Zhang, Dawn Song, Bingsheng He. <b>Assessing Judging Bias in Large Reasoning Models: An Empirical Study.</b>
+  <a href="pdf/conf/crypto/HofheinzKK23.pdf">pdf</a>
+</li> -->
+<li>
+  Qian Wang, Tianyu Wang, Zhenheng Tang, Qinbin Li, Nuo Chen, Jingsheng Liang, Bingsheng He. <b> All It Takes Is One Prompt: An Autonomous LLM-MA System.</b> <span class="light-gray-text">FM-WILD@ICLR 2025 Oral</span>.
+  <a href="https://openreview.net/forum?id=mSKj2bCWRr">pdf</a>
+  </li>
+<li>
+  Chenghao Zhu, Nuo Chen, Yufei Gao, Yunyi Zhang, Prayag Tiwari, Benyou Wang. <b>Is Your LLM Outdated? A Deep Look at Temporal Generalization.</b> NAACL 2025 Oral.
+  <a href="https://arxiv.org/abs/2405.08460">pdf</a>
+  </li>
+<li>
+Guorui Zheng*, Xidong Wang*, Juhao Liang, Nuo Chen, Yuping Zheng, Benyou Wang. <b>Efficiently Democratizing Medical LLMs for 50 Languages via a Mixture of Language Family Experts.</b> ICLR 2025.
+<a href="https://openreview.net/forum?id=JSB171dSUU">pdf</a> <a href="https://huggingface.co/spaces/nuojohnchen/ApolloPlayground">demo</a>
+</li>
+<li>
+  Yuan Li*, Bingqiao Luo*, Qian Wang*, Nuo Chen, Xu Liu, Bingsheng He. <b>CryptoTrade: A Reflective LLM-based Agent to Guide Zero-shot Cryptocurrency Trading.</b> EMNLP 2024. <span class="light-gray-text">AI4X 2025 Oral</span>.
+  <a href="https://aclanthology.org/2024.emnlp-main.63/">pdf</a>
+  </li>
+<li>
+    Xidong Wang*, Nuo Chen*, Junyin Chen*, Yidong Wang, Guorui Zhen, Xiangbo Wu, Yan Hu, Anningzhe Gao, Xiang Wan, Haizhou Li, Benyou Wang. <b>Apollo: A Lightweight Multilingual Medical LLM towards Democratizing Medical AI to 6B People.</b>
+    <a href="https://arxiv.org/abs/2403.03640">paper</a> <a href="https://github.com/FreedomIntelligence/Apollo">code</a> <a href="https://huggingface.co/FreedomIntelligence/Apollo-7B">model</a> <a href="https://huggingface.co/spaces/nuojohnchen/ApolloPlayground">demo</a>
+</li>
+<li>
+Jianing Wang, Nuo Chen, et.al. <b>HugNLP: A Unified and Comprehensive Library for Natural Language Processing.</b> CIKM 2023 Best Demo Paper.
+<a href="https://dl.acm.org/doi/10.1145/3583780.3614742">pdf</a> <a href="https://huggingface.co/spaces/nuojohnchen/HugCode">hugcode</a>
+</li>
+<li>
+Nuo Chen, et.al. <b>Pass-Tuning: Towards Structure-Aware Parameter-Efficient Tuning for Code Representation Learning.</b> EMNLP 2023.
+<a href="https://aclanthology.org/2023.findings-emnlp.42.pdf">pdf</a>
+</li>
+<li>
+  Nuo Chen, et.al. <b>Evaluating and Enhancing the Robustness of Code Pre-trained Models through Structure-Aware Adversarial Samples Generation.</b> EMNLP 2023.
+<a href="https://aclanthology.org/2023.findings-emnlp.991/">pdf</a>
+</li>
+<li>
+  Nuo Chen, et.al. <b>CAT-probing: A Metric-based Approach to Interpret How Pre-trained Models for Programming Language Attend Code Structure.</b> EMNLP 2022.
+<a href="https://aclanthology.org/2022.findings-emnlp.295/">pdf</a>
+</li>
+<!-- </ul>
+<h4>2021</h4>
+<ul> -->
+</div>
+
+
+<label for="drop-teaching" class="clicker"><h3>Services and Teaching</h3></label>
+<input id="drop-teaching" class="clicker" type="checkbox">
+<div>
+<ul>
+<li>Reviewer: ICLR, COLM, ACL, EMNLP, etc.</li>
+<li>Mentor, Odyssey CP2107 Independent Introduction to CS Research, 2025 Summer</li>
+<li>Teaching Assistant, CP4225/5425 Big Data Systems for Data Science, 2025 Spring</li>
+<li>Graduate Teaching Assistant, Mathematical Foundations of Data Science (Institutional First-Class Course), 2022 Spring & Fall</li>
+<li>Graduate Teaching Assistant, Algorithm Foundation of Data Science, 2022 Fall</li>
+<li>Graduate Teaching Assistant, Statistical Inference, 2022 Spring</li>
+</ul>
+</div>
+
+<label for="drop-awards" class="clicker"><h3>Honors and Awards</h3></label>
+<input id="drop-awards" class="clicker" type="checkbox">
+<div>
+<ul>
+<li>Best Master's Thesis Award, 2024</li>
+<li>Merit Team Award, ATEC 2023: LLM Tool Learning, Chinese Institute of Electronics, 2024</li>
+<li>Merit Award, International Algorithm Competition: LLM Competency Improvement, Greater Bay Area, 2023</li>
+<li>Second Prize, International Algorithm Competition: PLM Tuning, Greater Bay Area, 2022</li>
+<li>Best Undergraduate Thesis Award, 2021</li>
+</ul>
+</div>
+
+
+
+
+<!-- 包装内容 -->
+<div class="content-container">
+<script>
+// 添加背景图片检查
+window.addEventListener('load', function() {
+  // 检查图片是否存在
+  const img = new Image();
+  img.onload = function() {
+    console.log('背景图片加载成功');
+  };
+  img.onerror = function() {
+    console.error('背景图片加载失败，请检查路径是否正确');
+    // 尝试使用绝对路径
+    document.body.style.setProperty('--bg-image', 'url("' + window.location.href.split('/').slice(0, -1).join('/') + '/photo3.png")');
+  };
+  img.src = 'photo3.png';
+});
+
+// 键盘导航功能
+document.addEventListener('DOMContentLoaded', function() {
+  let navigableElements = [];
+  let currentIndex = -1;
+  
+  // 简化的获取可导航元素函数
+  function initNavigation() {
+    // 清除旧的导航元素
+    navigableElements = [];
+    
+    // 获取所有可见的链接和可折叠标题
+    document.querySelectorAll('a, label.clicker').forEach(el => {
+      // 检查元素是否可见
+      if (isElementVisible(el)) {
+        navigableElements.push(el);
+      }
+    });
+    
+    // 为每个元素添加tabindex
+    navigableElements.forEach((el, index) => {
+      el.setAttribute('tabindex', '0');
+      el.dataset.navIndex = index.toString();
+    });
+    
+    console.log('找到可导航元素:', navigableElements.length);
+  }
+  
+  // 检查元素是否可见
+  function isElementVisible(el) {
+    // 如果元素是标题（label.clicker），它总是可见的
+    if (el.classList.contains('clicker')) {
+      return true;
+    }
+    
+    // 检查元素是否在折叠区域内
+    let parent = el.parentElement;
+    while (parent) {
+      // 检查是否在折叠区域内
+      if (parent.previousElementSibling && 
+          parent.previousElementSibling.classList.contains('clicker')) {
+        const inputId = parent.previousElementSibling.getAttribute('for');
+        const input = document.getElementById(inputId);
+        if (input && !input.checked) {
+          return false;
+        }
+      }
+      
+      if (parent.style.display === 'none' || 
+          parent.style.visibility === 'hidden' || 
+          parent.style.opacity === '0' || 
+          parent.style.height === '0') {
+        return false;
+      }
+      
+      parent = parent.parentElement;
+    }
+    
+    return true;
+  }
+  
+  // 高亮当前元素
+  function highlightCurrentElement() {
+    // 移除所有高亮
+    document.querySelectorAll('.keyboard-focus').forEach(el => {
+      el.classList.remove('keyboard-focus');
+    });
+    
+    // 高亮当前元素
+    if (currentIndex >= 0 && currentIndex < navigableElements.length) {
+      navigableElements[currentIndex].classList.add('keyboard-focus');
+      console.log('高亮元素:', navigableElements[currentIndex].textContent.trim());
+    }
+  }
+  
+  // 简化的键盘事件处理
+  document.addEventListener('keydown', function(e) {
+    // 确保导航元素已初始化
+    if (navigableElements.length === 0) {
+      initNavigation();
+    }
+    
+    switch(e.key) {
+      case 'ArrowDown':
+        e.preventDefault();
+        if (navigableElements.length > 0) {
+          if (currentIndex === -1 || currentIndex >= navigableElements.length - 1) {
+            currentIndex = 0;
+          } else {
+            const currentElement = navigableElements[currentIndex];
+            
+            // 如果当前元素是折叠的标题
+            if (currentElement.classList.contains('clicker')) {
+              const inputId = currentElement.getAttribute('for');
+              const input = document.getElementById(inputId);
+              if (input && !input.checked) {
+                // 直接跳到下一个标题
+                let nextIndex = currentIndex + 1;
+                while (nextIndex < navigableElements.length) {
+                  const nextElement = navigableElements[nextIndex];
+                  if (nextElement.classList.contains('clicker')) {
+                    currentIndex = nextIndex;
+                    break;
+                  }
+                  nextIndex++;
+                }
+              } else {
+                currentIndex++;
+              }
+            } else {
+              currentIndex++;
+            }
+          }
+          navigableElements[currentIndex].focus();
+          highlightCurrentElement();
+        }
+        break;
+        
+      case 'ArrowUp':
+        e.preventDefault();
+        if (navigableElements.length > 0) {
+          // 如果没有选中元素或已经是第一个，选择最后一个
+          if (currentIndex === -1 || currentIndex <= 0) {
+            currentIndex = navigableElements.length - 1;
+          } else {
+            currentIndex--;
+          }
+          navigableElements[currentIndex].focus();
+          highlightCurrentElement();
+        }
+        break;
+        
+      case 'Enter':
+        if (currentIndex >= 0 && currentIndex < navigableElements.length) {
+          e.preventDefault();
+          const el = navigableElements[currentIndex];
+          
+          // 如果是可折叠元素
+          if (el.classList.contains('clicker')) {
+            const inputId = el.getAttribute('for');
+            const input = document.getElementById(inputId);
+            if (input) {
+              input.checked = !input.checked;
+              
+              // 重新初始化导航
+              setTimeout(function() {
+                initNavigation();
+                
+                // 尝试保持当前焦点
+                const newIndex = navigableElements.findIndex(item => item === el);
+                if (newIndex !== -1) {
+                  currentIndex = newIndex;
+                } else if (navigableElements.length > 0) {
+                  currentIndex = 0;
+                }
+                
+                if (currentIndex >= 0 && currentIndex < navigableElements.length) {
+                  navigableElements[currentIndex].focus();
+                  highlightCurrentElement();
+                }
+              }, 100);
+            }
+          } 
+          // 如果是链接
+          else if (el.tagName === 'A') {
+            el.click();
+          }
+        }
+        break;
+    }
+  });
+  
+  // 监听折叠状态变化
+  document.querySelectorAll('input.clicker').forEach(input => {
+    input.addEventListener('change', function() {
+      setTimeout(function() {
+        initNavigation();
+        
+        // 保持焦点在可见元素上
+        if (currentIndex >= 0 && currentIndex < navigableElements.length) {
+          navigableElements[currentIndex].focus();
+          highlightCurrentElement();
+        } else if (navigableElements.length > 0) {
+          currentIndex = 0;
+          navigableElements[0].focus();
+          highlightCurrentElement();
+        }
+      }, 100);
+    });
+  });
+  
+  // 初始化导航
+  initNavigation();
+  
+  // 确保页面加载后可以立即使用键盘导航
+  window.addEventListener('load', function() {
+    // 重新初始化导航
+    initNavigation();
+    
+    // 找到标题链接并设置焦点
+    const titleLink = document.querySelector('h2 a');
+    if (titleLink) {
+      currentIndex = Array.from(navigableElements).indexOf(titleLink);
+      titleLink.focus();
+      highlightCurrentElement();
+    }
+  });
+});
+</script>
+</div>
+</body>
+</html>
