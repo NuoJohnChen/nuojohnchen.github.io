@@ -32,7 +32,7 @@ body {
   background-color: #000000;
   position: relative;
 }
-
+/* Single background image */
 body::before {
   content: "";
   background-image: url('photo3.png');
@@ -49,9 +49,9 @@ body::before {
   pointer-events: none;
 }
 h2 a, h2 a:link, h2 a:visited, h2 a:active {
-  color: #ffa500;  
-  font-size: 20px; 
-  text-decoration: underline; 
+  color: #ffa500;  /* Same color as h2 */
+  font-size: 20px; /* Same size as h2 */
+  text-decoration: underline; /* Keep underline */
 }
 h2 a:hover {
   color: #000000;
@@ -68,7 +68,7 @@ a:hover,h3:hover { color:#000000; background:#c0c0c0; }
 ::-ms-selection { color:#000000; background:#00ffff; }
 ::-webkit-selection { color:#000000; background:#00ffff; }
 
-
+/* Keyboard navigation style - NES style */
 .keyboard-focus {
   outline: 3px solid #ffffff !important;
   background-color: #ffffff !important;
@@ -83,14 +83,14 @@ a:hover,h3:hover { color:#000000; background:#c0c0c0; }
   font-family: "Press Start 2P";
   color: white;
   text-shadow: 
-    1px 0 0 yellowgreen,  
-    -1px 0 0 yellowgreen, 
-    0 1px 0 yellowgreen,  
-    0 -1px 0 yellowgreen; 
+    1px 0 0 yellowgreen,  /* Right border */
+    -1px 0 0 yellowgreen, /* Left border */
+    0 1px 0 yellowgreen,  /* Bottom border */
+    0 -1px 0 yellowgreen; /* Top border */
 }
 
 .light-gray-text {
-  color: #888888;  
+  color: #888888;  /* Use lighter gray */
 }
 
 @keyframes blink {
@@ -98,19 +98,19 @@ a:hover,h3:hover { color:#000000; background:#c0c0c0; }
   50%, 100% { opacity: 0.8; }
 }
 
-
+/* Ensure all child elements inherit color changes */
 .keyboard-focus * {
   color: #000000 !important;
 }
 
-
+/* Ensure clickable elements have sufficient click area */
 label.clicker, h3.clicker {
   display: inline-block;
   padding: 5px;
   margin: 2px 0;
 }
 
-
+/* Background image styles */
 .background-container {
   display: none;
 }
@@ -119,13 +119,13 @@ label.clicker, h3.clicker {
   display: none;
 }
 
-
+/* Ensure content is above background */
 .content-container {
   position: relative;
   z-index: 1;
 }
 
-
+/* Add an initial selector to ensure an element is selected when page loads */
 #initial-focus {
   position: absolute;
   top: 0;
@@ -139,7 +139,7 @@ label.clicker, h3.clicker {
 <title>Nuo Chen</title>
 </head>
 <body>
-  <!-- 添加一个初始焦点元素 -->
+  <!-- Add an initial focus element -->
 <div id="initial-focus" tabindex="0"></div>
 <h2><a href="https://huggingface.co/nuojohnchen">Nuo Chen</a></h2>
 <p>
@@ -275,62 +275,62 @@ Nuo Chen, et.al. <b>Pass-Tuning: Towards Structure-Aware Parameter-Efficient Tun
 
 
 
-<!-- 包装内容 -->
+<!-- Content wrapper -->
 <div class="content-container">
 <script>
-// 添加背景图片检查
+// Add background image check
 window.addEventListener('load', function() {
-  // 检查图片是否存在
+  // Check if image exists
   const img = new Image();
   img.onload = function() {
-    console.log('背景图片加载成功');
+    console.log('Background image loaded successfully');
   };
   img.onerror = function() {
-    console.error('背景图片加载失败，请检查路径是否正确');
-    // 尝试使用绝对路径
+    console.error('Background image failed to load, please check if path is correct');
+    // Try using absolute path
     document.body.style.setProperty('--bg-image', 'url("' + window.location.href.split('/').slice(0, -1).join('/') + '/photo3.png")');
   };
   img.src = 'photo3.png';
 });
 
-// 键盘导航功能
+// Keyboard navigation functionality
 document.addEventListener('DOMContentLoaded', function() {
   let navigableElements = [];
   let currentIndex = -1;
   
-  // 简化的获取可导航元素函数
+  // Simplified function to get navigable elements
   function initNavigation() {
-    // 清除旧的导航元素
+    // Clear old navigation elements
     navigableElements = [];
     
-    // 获取所有可见的链接和可折叠标题
+    // Get all visible links and collapsible headers
     document.querySelectorAll('a, label.clicker').forEach(el => {
-      // 检查元素是否可见
+      // Check if element is visible
       if (isElementVisible(el)) {
         navigableElements.push(el);
       }
     });
     
-    // 为每个元素添加tabindex
+    // Add tabindex for each element
     navigableElements.forEach((el, index) => {
       el.setAttribute('tabindex', '0');
       el.dataset.navIndex = index.toString();
     });
     
-    console.log('找到可导航元素:', navigableElements.length);
+    console.log('Found navigable elements:', navigableElements.length);
   }
   
-  // 检查元素是否可见
+  // Check if element is visible
   function isElementVisible(el) {
-    // 如果元素是标题（label.clicker），它总是可见的
+    // If element is a header (label.clicker), it's always visible
     if (el.classList.contains('clicker')) {
       return true;
     }
     
-    // 检查元素是否在折叠区域内
+    // Check if element is in collapsed area
     let parent = el.parentElement;
     while (parent) {
-      // 检查是否在折叠区域内
+      // Check if in collapsed area
       if (parent.previousElementSibling && 
           parent.previousElementSibling.classList.contains('clicker')) {
         const inputId = parent.previousElementSibling.getAttribute('for');
@@ -353,23 +353,23 @@ document.addEventListener('DOMContentLoaded', function() {
     return true;
   }
   
-  // 高亮当前元素
+  // Highlight current element
   function highlightCurrentElement() {
-    // 移除所有高亮
+    // Remove all highlights
     document.querySelectorAll('.keyboard-focus').forEach(el => {
       el.classList.remove('keyboard-focus');
     });
     
-    // 高亮当前元素
+    // Highlight current element
     if (currentIndex >= 0 && currentIndex < navigableElements.length) {
       navigableElements[currentIndex].classList.add('keyboard-focus');
-      console.log('高亮元素:', navigableElements[currentIndex].textContent.trim());
+      console.log('Highlighted element:', navigableElements[currentIndex].textContent.trim());
     }
   }
   
-  // 简化的键盘事件处理
+  // Simplified keyboard event handling
   document.addEventListener('keydown', function(e) {
-    // 确保导航元素已初始化
+    // Ensure navigation elements are initialized
     if (navigableElements.length === 0) {
       initNavigation();
     }
@@ -383,12 +383,12 @@ document.addEventListener('DOMContentLoaded', function() {
           } else {
             const currentElement = navigableElements[currentIndex];
             
-            // 如果当前元素是折叠的标题
+            // If current element is a collapsed header
             if (currentElement.classList.contains('clicker')) {
               const inputId = currentElement.getAttribute('for');
               const input = document.getElementById(inputId);
               if (input && !input.checked) {
-                // 直接跳到下一个标题
+                // Jump directly to next header
                 let nextIndex = currentIndex + 1;
                 while (nextIndex < navigableElements.length) {
                   const nextElement = navigableElements[nextIndex];
@@ -413,7 +413,7 @@ document.addEventListener('DOMContentLoaded', function() {
       case 'ArrowUp':
         e.preventDefault();
         if (navigableElements.length > 0) {
-          // 如果没有选中元素或已经是第一个，选择最后一个
+          // If no element is selected or already at the first, select the last one
           if (currentIndex === -1 || currentIndex <= 0) {
             currentIndex = navigableElements.length - 1;
           } else {
@@ -429,18 +429,18 @@ document.addEventListener('DOMContentLoaded', function() {
           e.preventDefault();
           const el = navigableElements[currentIndex];
           
-          // 如果是可折叠元素
+          // If it's a collapsible element
           if (el.classList.contains('clicker')) {
             const inputId = el.getAttribute('for');
             const input = document.getElementById(inputId);
             if (input) {
               input.checked = !input.checked;
               
-              // 重新初始化导航
+              // Reinitialize navigation
               setTimeout(function() {
                 initNavigation();
                 
-                // 尝试保持当前焦点
+                // Try to keep current focus
                 const newIndex = navigableElements.findIndex(item => item === el);
                 if (newIndex !== -1) {
                   currentIndex = newIndex;
@@ -455,7 +455,7 @@ document.addEventListener('DOMContentLoaded', function() {
               }, 100);
             }
           } 
-          // 如果是链接
+          // If it's a link
           else if (el.tagName === 'A') {
             el.click();
           }
@@ -464,13 +464,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
   
-  // 监听折叠状态变化
+  // Listen for collapsible state changes
   document.querySelectorAll('input.clicker').forEach(input => {
     input.addEventListener('change', function() {
       setTimeout(function() {
         initNavigation();
         
-        // 保持焦点在可见元素上
+        // Keep focus on visible elements
         if (currentIndex >= 0 && currentIndex < navigableElements.length) {
           navigableElements[currentIndex].focus();
           highlightCurrentElement();
@@ -483,15 +483,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-  // 初始化导航
+  // Initialize navigation
   initNavigation();
   
-  // 确保页面加载后可以立即使用键盘导航
+  // Ensure page loads immediately usable keyboard navigation
   window.addEventListener('load', function() {
-    // 重新初始化导航
+    // Reinitialize navigation
     initNavigation();
     
-    // 找到标题链接并设置焦点
+    // Find title link and set focus
     const titleLink = document.querySelector('h2 a');
     if (titleLink) {
       currentIndex = Array.from(navigableElements).indexOf(titleLink);
