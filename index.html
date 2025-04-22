@@ -32,7 +32,7 @@ body {
   background-color: #000000;
   position: relative;
 }
-/* 单一背景图片 */
+
 body::before {
   content: "";
   background-image: url('photo3.png');
@@ -49,9 +49,9 @@ body::before {
   pointer-events: none;
 }
 h2 a, h2 a:link, h2 a:visited, h2 a:active {
-  color: #ffa500;  /* 与h2相同的颜色 */
-  font-size: 20px; /* 与h2相同的大小 */
-  text-decoration: underline; /* 保持下划线 */
+  color: #ffa500;  
+  font-size: 20px; 
+  text-decoration: underline; 
 }
 h2 a:hover {
   color: #000000;
@@ -68,7 +68,7 @@ a:hover,h3:hover { color:#000000; background:#c0c0c0; }
 ::-ms-selection { color:#000000; background:#00ffff; }
 ::-webkit-selection { color:#000000; background:#00ffff; }
 
-/* 键盘导航样式 - 红白机风格 */
+
 .keyboard-focus {
   outline: 3px solid #ffffff !important;
   background-color: #ffffff !important;
@@ -83,14 +83,14 @@ a:hover,h3:hover { color:#000000; background:#c0c0c0; }
   font-family: "Press Start 2P";
   color: white;
   text-shadow: 
-    1px 0 0 yellowgreen,  /* 右描边 */
-    -1px 0 0 yellowgreen, /* 左描边 */
-    0 1px 0 yellowgreen,  /* 下描边 */
-    0 -1px 0 yellowgreen; /* 上描边 */
+    1px 0 0 yellowgreen,  
+    -1px 0 0 yellowgreen, 
+    0 1px 0 yellowgreen,  
+    0 -1px 0 yellowgreen; 
 }
 
 .light-gray-text {
-  color: #888888;  /* 使用较淡的灰色 */
+  color: #888888;  
 }
 
 @keyframes blink {
@@ -98,19 +98,19 @@ a:hover,h3:hover { color:#000000; background:#c0c0c0; }
   50%, 100% { opacity: 0.8; }
 }
 
-/* 确保所有子元素也继承颜色变化 */
+
 .keyboard-focus * {
   color: #000000 !important;
 }
 
-/* 确保可点击元素有足够的点击区域 */
+
 label.clicker, h3.clicker {
   display: inline-block;
   padding: 5px;
   margin: 2px 0;
 }
 
-/* 背景图片样式 */
+
 .background-container {
   display: none;
 }
@@ -119,13 +119,13 @@ label.clicker, h3.clicker {
   display: none;
 }
 
-/* 确保内容在背景之上 */
+
 .content-container {
   position: relative;
   z-index: 1;
 }
 
-/* 添加一个初始选择器，确保页面加载时就有一个元素被选中 */
+
 #initial-focus {
   position: absolute;
   top: 0;
