@@ -137,6 +137,7 @@ label.clicker, h3.clicker {
 }
 </style>
 <title>Nuo Chen</title>
+<script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/5.5.0/gradio.js"></script>
 </head>
 <body>
   <!-- Add an initial focus element -->
@@ -184,67 +185,71 @@ I am a Ph.D. student in the School of Computing funded by the National Universit
 <a href="https://scholar.google.com/citations?user=E99B1yEAAAAJ&hl=en">Google Scholar</a>.
 </p>
 <!-- <h4>2023</h4> -->
+ <!-- <h4>fair judge, medical, finance, multilinguality, code</h4> -->
 <ul>
-<li>
-  Nuo Chen, Zhiyuan Hu, Qingyun Zou, Jiaying Wu, Qian Wang, Bryan Hooi, Bingsheng He. <b>JudgeLRM: Large Reasoning Models as a Judge.</b> <span class="light-gray-text">Huggingface #2 Paper of the day.</span>
-  <a href="https://arxiv.org/abs/2504.00050">paper</a> <a href="https://github.com/NuoJohnChen/JudgeLRM">code</a> <a href="https://huggingface.co/nuojohnchen/JudgeLRM-7B">model</a> <a href="https://huggingface.co/spaces/nuojohnchen/JudgeLRMDemo">demo</a> <a href="https://osspicgo.oss-cn-shanghai.aliyuncs.com/judgelrmpre.pdf">slides</a>
+  <li id="judgelrm-demo-li">
+    Nuo Chen, Zhiyuan Hu, Qingyun Zou, Jiaying Wu, Qian Wang, Bryan Hooi, Bingsheng He. <b>JudgeLRM: Large Reasoning Models as a Judge.</b> <span class="light-gray-text">Huggingface #2 Paper of the day.</span>
+    <a href="https://arxiv.org/abs/2504.00050">paper</a> <a href="https://github.com/NuoJohnChen/JudgeLRM">code</a>  <a href="https://huggingface.co/nuojohnchen/JudgeLRM-7B">model</a> <a href="https://osspicgo.oss-cn-shanghai.aliyuncs.com/judgelrmpre.pdf">slides</a> <a id="judgelrm-demo-link" href="https://huggingface.co/spaces/nuojohnchen/JudgeLRMDemo">demo</a><div id="judgelrm-demo-container"></div>
   </li>
-<!-- <li>
-  Nuo Chen, Andre Lin HuiKai, Jiaying Wu, Junyi Hou,  Zining Zhang, Qian Wang, Xidong Wang, Bingsheng He. <b>XtraGPT: LLMs for Human-AI Collaboration on Controllable Scientific Paper Refinement.</b>
-  <a href="arxiv.pdf">paper</a> <a href="https://huggingface.co/nuojohnchen/XtraGPT">code</a> <a href="https://huggingface.co/Xtra-Computing/XtraGPT-7B">model</a> <a href="https://huggingface.co/spaces/nuojohnchen/XtraGPT-7B">demo</a>
-  </li> -->
-<li>
-  Qian Wang, Zhanzhi Lou, Zhenheng Tang, Nuo Chen, Xuandong Zhao, Wenxuan Zhang, Dawn Song, Bingsheng He. <b>Assessing Judging Bias in Large Reasoning Models: An Empirical Study.</b>
-  <a href="https://arxiv.org/abs/2504.09946">paper</a>
-</li>
-<li>
-    Xidong Wang*, Nuo Chen*, Junyin Chen*, Yidong Wang, Guorui Zhen, Xiangbo Wu, Yan Hu, Anningzhe Gao, Xiang Wan, Haizhou Li, Benyou Wang. <b>Apollo: A Lightweight Multilingual Medical LLM towards Democratizing Medical AI to 6B People.</b>
-    <a href="https://arxiv.org/abs/2403.03640">paper</a> <a href="https://github.com/FreedomIntelligence/Apollo">code</a> <a href="https://huggingface.co/FreedomIntelligence/Apollo-7B">model</a> <a href="https://huggingface.co/spaces/nuojohnchen/ApolloPlayground">demo</a>
-</li>
+  <!-- <li>
+    Nuo Chen, Andre Lin HuiKai, Jiaying Wu, Junyi Hou,  Zining Zhang, Qian Wang, Xidong Wang, Bingsheng He. <b>XtraGPT: LLMs for Human-AI Collaboration on Controllable Scientific Paper Refinement.</b>
+    <a href="arxiv.pdf">paper</a> <a href="https://huggingface.co/nuojohnchen/XtraGPT">code</a> <a href="https://huggingface.co/Xtra-Computing/XtraGPT-7B">model</a> <a href="https://huggingface.co/spaces/nuojohnchen/XtraGPT-7B">demo</a>
+    </li> -->
+  <li>
+    Qian Wang, Zhanzhi Lou, Zhenheng Tang, Nuo Chen, Xuandong Zhao, Wenxuan Zhang, Dawn Song, Bingsheng He. <b>Assessing Judging Bias in Large Reasoning Models: An Empirical Study.</b>
+    <a href="https://arxiv.org/abs/2504.09946">paper</a>
+  </li>
+  <li id="apollo-demo-li">
+    Xidong Wang*, Nuo Chen*, Junyin Chen*, Yidong Wang, Guorui Zhen, Chunxian Zhang, Xiangbo Wu, Yan Hu, Anningzhe Gao, Xiang Wan, Haizhou Li, Benyou Wang. <b>Apollo: A Lightweight Multilingual Medical LLM towards Democratizing Medical AI to 6B People.</b>
+    <a href="https://arxiv.org/abs/2403.03640">paper</a> <a href="https://github.com/FreedomIntelligence/Apollo">code</a> <a href="https://huggingface.co/FreedomIntelligence/Apollo-7B">model</a> <a id="apollo-demo-link" href="https://huggingface.co/spaces/nuojohnchen/ApolloPlayground">demo</a>
+    <div id="apollo-demo-container"></div>
+  </li>
 <hr style="border: 0; height: 1px; background: #404040; margin: 10px 0;">
 <li>
-Nuo Chen*, Yufei Gao*, Yongnan Jin*, Yan Hu, Anningzhe Gao, Lingyong Yan and Benyou Wang. <b>Mitigating Short Board Effect via Dynamic Reward Balancing in Multi-reward LLM Optimization.</b> <span class="light-gray-text">SSI-FM@ICLR 2025</span>.
-<a href="https://openreview.net/forum?id=JXAJ12ssND">paper</a>
-</li>
+  Nuo Chen*, Yufei Gao*, Yongnan Jin*, Yan Hu, Anningzhe Gao, Lingyong Yan and Benyou Wang. <b>Mitigating Short Board Effect via Dynamic Reward Balancing in Multi-reward LLM Optimization.</b> <span class="light-gray-text">SSI-FM@ICLR 2025</span>.
+  <a href="https://openreview.net/forum?id=JXAJ12ssND">pdf</a>
+  </li>
 <li>
-Nuo Chen, Guojun Xiong, Bingsheng He. <b>MPAW: Multi-Preference Alignment through Weak Model Collaboration for Efficient and Flexible LLM Decoding.</b> <span class="light-gray-text">SSI-FM@ICLR 2025</span>.
-<a href="https://openreview.net/forum?id=zMtCKA4APY">paper</a>
-</li>
+  Nuo Chen, Guojun Xiong, Bingsheng He. <b>MPAW: Multi-Preference Alignment through Weak Model Collaboration for Efficient and Flexible LLM Decoding.</b> <span class="light-gray-text">SSI-FM@ICLR 2025</span>.
+  <a href="https://openreview.net/forum?id=zMtCKA4APY">pdf</a>
+  </li>
 <li>
   Qian Wang, Tianyu Wang, Zhenheng Tang, Qinbin Li, Nuo Chen, Jingsheng Liang, Bingsheng He. <b> All It Takes Is One Prompt: An Autonomous LLM-MA System.</b> <span class="light-gray-text">FM-WILD@ICLR 2025 Oral</span>.
-  <a href="https://openreview.net/forum?id=mSKj2bCWRr">paper</a>
+  <a href="https://openreview.net/forum?id=mSKj2bCWRr">pdf</a>
   </li>
-<li>
-  Chenghao Zhu, Nuo Chen, Yufei Gao, Yunyi Zhang, Prayag Tiwari, Benyou Wang. <b>Is Your LLM Outdated? A Deep Look at Temporal Generalization.</b> NAACL 2025 Oral.
-  <a href="https://arxiv.org/abs/2405.08460">paper</a>
+  <li>
+    Chenghao Zhu, Nuo Chen, Yufei Gao, Yunyi Zhang, Prayag Tiwari, Benyou Wang. <b>Is Your LLM Outdated? A Deep Look at Temporal Generalization.</b> NAACL 2025 Oral.
+    <a href="https://arxiv.org/abs/2405.08460">paper</a>
+    </li>
+  <li id="apollo2-demo-li">
+    Guorui Zheng*, Xidong Wang*, Juhao Liang, Nuo Chen, Yuping Zheng, Benyou Wang. <b>Efficiently Democratizing Medical LLMs for 50 Languages via a Mixture of Language Family Experts.</b> ICLR 2025.
+    <a href="https://openreview.net/forum?id=JSB171dSUU">paper</a> <a id="apollo2-demo-link" href="https://huggingface.co/spaces/nuojohnchen/ApolloPlayground">demo</a>
+    <div id="apollo2-demo-container"></div>
   </li>
-<li>
-Guorui Zheng*, Xidong Wang*, Juhao Liang, Nuo Chen, Yuping Zheng, Benyou Wang. <b>Efficiently Democratizing Medical LLMs for 50 Languages via a Mixture of Language Family Experts.</b> ICLR 2025.
-<a href="https://openreview.net/forum?id=JSB171dSUU">paper</a> <a href="https://huggingface.co/spaces/nuojohnchen/ApolloPlayground">demo</a>
-</li>
-<li>
-  Yuan Li*, Bingqiao Luo*, Qian Wang*, Nuo Chen, Xu Liu, Bingsheng He. <b>CryptoTrade: A Reflective LLM-based Agent to Guide Zero-shot Cryptocurrency Trading.</b> EMNLP 2024.
-  <a href="https://aclanthology.org/2024.emnlp-main.63/">paper</a>
+  <li>
+    Yuan Li*, Bingqiao Luo*, Qian Wang*, Nuo Chen, Xu Liu, Bingsheng He. <b>CryptoTrade: A Reflective LLM-based Agent to Guide Zero-shot Cryptocurrency Trading.</b> EMNLP 2024.
+    <a href="https://aclanthology.org/2024.emnlp-main.63/">paper</a>
+    </li>
+  <li>
+  Jianing Wang, Nuo Chen, et.al. <b>HugNLP: A Unified and Comprehensive Library for Natural Language Processing.</b> CIKM 2023 Best Demo Paper.
+  <a href="https://dl.acm.org/doi/10.1145/3583780.3614742">paper</a> <a href="https://huggingface.co/spaces/nuojohnchen/HugCode">hugcode</a>
   </li>
-<li>
-Jianing Wang, Nuo Chen, et.al. <b>HugNLP: A Unified and Comprehensive Library for Natural Language Processing.</b> CIKM 2023 Best Demo Paper.
-<a href="https://dl.acm.org/doi/10.1145/3583780.3614742">paper</a> <a href="https://huggingface.co/spaces/nuojohnchen/HugCode">hugcode</a>
-</li>
-<li>
-Nuo Chen, et.al. <b>Pass-Tuning: Towards Structure-Aware Parameter-Efficient Tuning for Code Representation Learning.</b> EMNLP 2023.
-<a href="https://aclanthology.org/2023.findings-emnlp.42.pdf">paper</a>
-</li>
-<li>
-  Nuo Chen, et.al. <b>Evaluating and Enhancing the Robustness of Code Pre-trained Models through Structure-Aware Adversarial Samples Generation.</b> EMNLP 2023.
-<a href="https://aclanthology.org/2023.findings-emnlp.991/">paper</a>
-</li>
-<li>
-  Nuo Chen, et.al. <b>CAT-probing: A Metric-based Approach to Interpret How Pre-trained Models for Programming Language Attend Code Structure.</b> EMNLP 2022.
-<a href="https://aclanthology.org/2022.findings-emnlp.295/">paper</a>
-</li>
+  <li>
+  Nuo Chen, et.al. <b>Pass-Tuning: Towards Structure-Aware Parameter-Efficient Tuning for Code Representation Learning.</b> EMNLP 2023.
+  <a href="https://aclanthology.org/2023.findings-emnlp.42.pdf">paper</a>
+  </li>
+  <li>
+    Nuo Chen, et.al. <b>Evaluating and Enhancing the Robustness of Code Pre-trained Models through Structure-Aware Adversarial Samples Generation.</b> EMNLP 2023.
+  <a href="https://aclanthology.org/2023.findings-emnlp.991/">paper</a>
+  </li>
+  <li>
+    Nuo Chen, et.al. <b>CAT-probing: A Metric-based Approach to Interpret How Pre-trained Models for Programming Language Attend Code Structure.</b> EMNLP 2022.
+  <a href="https://aclanthology.org/2022.findings-emnlp.295/">paper</a>
+  </li>
 <!-- </ul>
 <h4>2021</h4>
 <ul> -->
+</ul>
 </div>
 
 
@@ -501,6 +506,64 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
+function loadGradioDemo(containerId, gradioSrc) {
+  const container = document.getElementById(containerId);
+  if (container && !container.innerHTML) {
+    container.innerHTML = `<gradio-app src="${gradioSrc}"></gradio-app>`;
+  }
+}
+
+function unloadGradioDemo(containerId) {
+  const container = document.getElementById(containerId);
+  if (container) container.innerHTML = '';
+}
+
+// JudgeLRM
+const demoLink = document.getElementById('judgelrm-demo-link');
+if (demoLink) {
+  demoLink.addEventListener('mouseenter', () => loadGradioDemo('judgelrm-demo-container', 'https://nuojohnchen-judgelrmdemo.hf.space/'));
+  demoLink.addEventListener('mouseleave', () => unloadGradioDemo('judgelrm-demo-container'));
+  // 键盘高亮
+  const observer = new MutationObserver(() => {
+    if (demoLink.classList.contains('keyboard-focus')) {
+      loadGradioDemo('judgelrm-demo-container', 'https://nuojohnchen-judgelrmdemo.hf.space/');
+    } else {
+      unloadGradioDemo('judgelrm-demo-container');
+    }
+  });
+  observer.observe(demoLink, { attributes: true, attributeFilter: ['class'] });
+}
+
+// Apollo 1
+const apolloDemoLink = document.getElementById('apollo-demo-link');
+if (apolloDemoLink) {
+  apolloDemoLink.addEventListener('mouseenter', () => loadGradioDemo('apollo-demo-container', 'https://nuojohnchen-ApolloPlayground.hf.space/'));
+  apolloDemoLink.addEventListener('mouseleave', () => unloadGradioDemo('apollo-demo-container'));
+  const observerApollo = new MutationObserver(() => {
+    if (apolloDemoLink.classList.contains('keyboard-focus')) {
+      loadGradioDemo('apollo-demo-container', 'https://nuojohnchen-ApolloPlayground.hf.space/');
+    } else {
+      unloadGradioDemo('apollo-demo-container');
+    }
+  });
+  observerApollo.observe(apolloDemoLink, { attributes: true, attributeFilter: ['class'] });
+}
+
+// Apollo 2
+const apollo2DemoLink = document.getElementById('apollo2-demo-link');
+if (apollo2DemoLink) {
+  apollo2DemoLink.addEventListener('mouseenter', () => loadGradioDemo('apollo2-demo-container', 'https://nuojohnchen-ApolloPlayground.hf.space/'));
+  apollo2DemoLink.addEventListener('mouseleave', () => unloadGradioDemo('apollo2-demo-container'));
+  const observerApollo2 = new MutationObserver(() => {
+    if (apollo2DemoLink.classList.contains('keyboard-focus')) {
+      loadGradioDemo('apollo2-demo-container', 'https://nuojohnchen-ApolloPlayground.hf.space/');
+    } else {
+      unloadGradioDemo('apollo2-demo-container');
+    }
+  });
+  observerApollo2.observe(apollo2DemoLink, { attributes: true, attributeFilter: ['class'] });
+}
 </script>
 </div>
 </body>
